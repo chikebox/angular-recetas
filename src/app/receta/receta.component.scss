@@ -20,12 +20,48 @@
     }
     
 }
-.ingredientes{
+.listaIngredientes{
+    &:hover .ingredientes{
+            background-color:green;
+            color:white;
+        
+    }
+    &:hover h4{
+        background-color:green;
+        color:white;
+    
+    }
+    &:hover #numIngredientes{
+        background-color:green;
+        color:white;
+    
+    }
+    .ingredientes{
+        border-top: 1px solid grey;
+        border-bottom:1px solid grey;
+        
+    }
+    #numIngredientes{
+        display:inline-block;
+        width:20px;
+        height:20px;
+        color:white;
+        text-align: center;
+        background-color: green;
+        border:1px solid grey;
+        border-radius:50%;
+    }
     h4{
+        display:inline-block;
         text-align: center;
         padding:5px 0;
         font-size:1.2em;
-        border-top: 1px solid grey;
-        border-bottom:1px solid grey;
+        color:green;
+        
+    }
+    .glyphicon{
+        float:right;
+        padding-top:15px;
+        text-decoration: none;
     }
 }

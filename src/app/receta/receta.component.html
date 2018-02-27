@@ -11,11 +11,18 @@
             <span class="cocinero">{{cocinero}}</span>
             <span class="label label-primary likes" (click)=sumarLike()>Likes {{ likes }}</span>
           </p>
-          <section class="ingredientes">
-            <h4>Ingredientes</h4>
-            <ol>
-              <li *ngFor="let ingrediente of ingredientes">{{ ingrediente }}</li>
-            </ol>
+          <section class="listaIngredientes">
+            <div class="ingredientes">
+              <div id="numIngredientes">{{numIngredientes}}</div> 
+              <h4>Ingredientes</h4>
+              <span *ngIf="!show" href="" (click)="cambiarShow()" class=".desplegar glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+              <span *ngIf="show" href="" (click)="cambiarShow()" class=".ocultar glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+            </div>
+            <div *ngIf="show" id="lista">
+              <ol>
+                <li *ngFor="let ingrediente of ingredientes">{{ ingrediente }}</li>
+              </ol>
+            </div>
           </section>
         </div>
       </div>

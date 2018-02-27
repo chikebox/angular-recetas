@@ -14,6 +14,8 @@ export class RecetaComponent implements OnInit {
   fotoGluten: string;
   isGlutenFree:boolean;
   ingredientes:string[];
+  numIngredientes:number;
+  show:boolean;
   constructor() {
     console.log('RecetaComponent constructor');
     this.nombre='Bocata de calamares';
@@ -23,6 +25,8 @@ export class RecetaComponent implements OnInit {
     this.isGlutenFree=true;
     this.cocinero="Carlos Arguiñano";
     this.ingredientes=["Calamares","Limon","Pan","Salsa Ali Oli"]
+    this.numIngredientes=this.ingredientes.length;
+    this.show=false;
    }
 
   ngOnInit() {
@@ -30,5 +34,8 @@ export class RecetaComponent implements OnInit {
   }
   sumarLike(){
     this.likes++;
+  }
+  cambiarShow(){
+    this.show=!this.show;
   }
 }
