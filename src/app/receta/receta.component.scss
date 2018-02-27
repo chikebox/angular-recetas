@@ -1,0 +1,31 @@
+
+.thumbnail{
+    position: relative;
+    p{
+        font-size: 1em;
+    }
+    span.likes{
+        float:right;
+        margin-top: 5px;
+    }
+    span.cocinero{
+        font-weight: 900;
+    }
+    #fotoGluten{
+        position: absolute;
+        top:5px;
+        right:5px;
+        width:50px;
+        height: auto;
+    }
+    
+}
+.ingredientes{
+    h4{
+        text-align: center;
+        padding:5px 0;
+        font-size:1.2em;
+        border-top: 1px solid grey;
+        border-bottom:1px solid grey;
+    }
+}
