@@ -24,7 +24,7 @@
     &:hover .ingredientes{
             background-color:green;
             color:white;
-        
+            cursor:pointer;
     }
     &:hover h4{
         background-color:green;
@@ -34,6 +34,7 @@
     &:hover #numIngredientes{
         background-color:green;
         color:white;
+        
     
     }
     .ingredientes{
@@ -42,14 +43,10 @@
         
     }
     #numIngredientes{
-        display:inline-block;
-        width:20px;
-        height:20px;
         color:white;
-        text-align: center;
+
         background-color: green;
-        border:1px solid grey;
-        border-radius:50%;
+
     }
     h4{
         display:inline-block;

@@ -12,7 +12,9 @@
       </div>
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
+          <li routerLinkActive="active"><a [routerLink]="['receta']">Recetas</a></li>
+          <li routerLinkActive="active"><a [routerLink]="['propiedades']">Propiedades</a></li>
+          <li routerLinkActive="active"><a [routerLink]="['usuario']">Usuarios</a></li>
         </ul>
       </div><!--/.nav-collapse -->
     </div>
@@ -20,11 +22,7 @@
 
   <!-- Begin page content -->
   <div class="container">
-    <div class="jumbotron">
-      <h1>{{ title }}</h1>
-      <app-receta></app-receta>
-      <button class="btn btn-primary btn-lg">Learn More</button>
-    </div>
+    <router-outlet></router-outlet>
   </div>
 
   <footer class="footer">
