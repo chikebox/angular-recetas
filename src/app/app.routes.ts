@@ -5,11 +5,13 @@ import {PropiedadesComponent} from "./propiedades/propiedades.component";
 import {Page404Component} from "./page404/page404.component";
 import {HomeComponent} from "./home/home.component";
 import {UsuarioComponent} from "./usuario/usuario.component";
+import { ConcesionarioComponent } from './concesionario/concesionario.component';
 const appRoutes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'receta', component: RecetaComponent },
     { path: 'propiedades', component: PropiedadesComponent },
     { path: 'usuario', component: UsuarioComponent },
+    { path: 'concesionario', component: ConcesionarioComponent  },
     { path: '**', component: Page404Component  }
     
   ];

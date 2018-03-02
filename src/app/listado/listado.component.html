@@ -1,0 +1,6 @@
+<div *ngFor="let cocheIteracion of stock">
+    <!-- llamada al componente hijo -->
+    <div class="col-xs-12">
+      <app-coche [cocheParametro]="cocheIteracion" (click)="seleccionar($event,cocheIteracion)"></app-coche>
+    </div>
+  </div>

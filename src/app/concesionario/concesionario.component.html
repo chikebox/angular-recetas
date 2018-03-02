@@ -1,0 +1,54 @@
+<p>
+  Ejemplo de un Componente Padre <b>ConcesionarioComponent</b> e Hijo <b>CocheComponent</b>: Aprender a pasar parámetro de uno a otro con @input y @output</p>
+<nav aria-label="Catálogo de coches">
+      <ul class="pagination">  
+        <li *ngFor="let coche of stock" [class.active]="coche==coche1 || coche==coche2">
+          <a>{{ coche.marca }} {{ coche.modelo }}</a>
+        </li>
+      </ul> 
+</nav>
+<div class="col-xs-12 col-sm-3">
+    <div class="catalogo panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Catálogo de coches</h3>
+      </div>
+      <div class="panel-body">
+        <app-listado [stock]="stock" (eventoEmitir)="recibirCoche($event)"></app-listado>
+      </div>
+    </div>
+  </div>
+
+<div class="col-xs-12 col-sm-9">
+    <div class="comparador panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Comparador de coches</h3>
+      </div>
+      <div class="panel-body">
+          <div class="col-xs-6" *ngIf="coche1.marca!='' && coche2.marca!=''">
+              <div class="thumbnail" (click)="seleccionar($event)">
+                  <img src="/assets/imgs/coche_default.jpg" alt="coche">
+                  <div class="caption">
+                    <p>Marca: {{ coche1.marca }}</p>
+                    <p>Modelo: {{ coche1.modelo }}</p>
+                    <p [ngClass]="coche1.puertas >= coche2.puertas  && coche2.marca!='' ? 'verde' : 'rojo'">Puertas: {{ coche1.puertas }}</p>
+                    <p [ngClass]="coche1.caballos >= coche2.caballos && coche2.marca!='' ? 'verde' : 'rojo'">Caballos: {{ coche1.caballos }}</p>
+                    <p [ngClass]="coche1.consumo <= coche2.consumo && coche2.marca!='' ? 'verde' : 'rojo'">Consumo: {{ coche1.consumo }}</p>
+                  </div>
+              </div>
+          </div>
+          <div class="col-xs-6" *ngIf="coche1.marca!='' && coche2.marca!=''">
+              <div class="thumbnail" (click)="seleccionar($event)">
+                  <img src="/assets/imgs/coche_default.jpg" alt="coche">
+                  <div class="caption">
+                    <p>Marca: {{ coche2.marca }}</p>
+                    <p>Modelo: {{ coche2.modelo }}</p>
+                    <p [ngClass]="coche2.puertas >= coche1.puertas ? 'verde' : 'rojo'">Puertas: {{ coche2.puertas }}</p>
+                    <p [ngClass]="coche2.caballos >= coche1.caballos ? 'verde' : 'rojo'">Caballos: {{ coche2.caballos }}</p>
+                    <p [ngClass]="coche2.consumo <= coche1.consumo ? 'verde' : 'rojo'">Consumo: {{ coche2.consumo }}</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+ 

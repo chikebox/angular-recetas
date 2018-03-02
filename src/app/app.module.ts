@@ -9,6 +9,9 @@ import { Page404Component } from './page404/page404.component';
 import { AppRouter } from './app.routes';
 import { HomeComponent } from './home/home.component';
 import { UsuarioComponent } from './usuario/usuario.component';
+import { ConcesionarioComponent } from './concesionario/concesionario.component';
+import { CocheComponent } from './concesionario/coche/coche.component';
+import { ListadoComponent } from './listado/listado.component';
 
 
 @NgModule({
@@ -18,7 +21,10 @@ import { UsuarioComponent } from './usuario/usuario.component';
     PropiedadesComponent,
     Page404Component,
     HomeComponent,
-    UsuarioComponent
+    UsuarioComponent,
+    ConcesionarioComponent,
+    CocheComponent,
+    ListadoComponent
   ],
   imports: [
     BrowserModule,
