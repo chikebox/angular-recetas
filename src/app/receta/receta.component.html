@@ -3,7 +3,7 @@
       <div class="thumbnail">
         <img id="fotoGluten" *ngIf="receta.isGlutenFree" src="../../assets/imgs/sinGluten.png" alt="gluten">
         <img id="fotoGluten" *ngIf="!receta.isGlutenFree" src="../../assets/imgs/conGluten.png" alt="gluten">
-        <img src="{{receta.foto}}" alt="{{ nombre }}">
+        <img src="{{receta.foto}}" alt="{{ receta.nombre }}">
         <div class="caption">
           <h3>{{ receta.nombre | uppercase }}</h3>
           <p>{{ receta.descripcion | slice:0:100 }}</p>
