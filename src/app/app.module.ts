@@ -12,6 +12,16 @@ import { UsuarioComponent } from './usuario/usuario.component';
 import { ConcesionarioComponent } from './concesionario/concesionario.component';
 import { CocheComponent } from './concesionario/coche/coche.component';
 import { ListadoComponent } from './listado/listado.component';
+import { CochesService } from './providers/coches.service';
+import { PipeResolver } from '@angular/compiler';
+import { RoundPipe } from './pipes/pipeRound';
+import { FormsModule } from '@angular/forms'
+import { FilterPipe } from './pipes/filterpipe';
+
+import { RecetarioComponent } from './recetario/recetario.component';
+import { RecetasService } from './providers/recetas.service';
+import { FilterReceta } from './pipes/filterRecetas';
+import { RecetaDetalleComponent } from './receta-detalle/receta-detalle.component';
 
 
 @NgModule({
@@ -24,13 +34,23 @@ import { ListadoComponent } from './listado/listado.component';
     UsuarioComponent,
     ConcesionarioComponent,
     CocheComponent,
-    ListadoComponent
+    ListadoComponent,
+    RoundPipe,
+    FilterPipe,
+    FilterReceta,
+    RecetarioComponent,
+    RecetaDetalleComponent
   ],
   imports: [
     BrowserModule,
-    AppRouter
+    AppRouter,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    CochesService,
+    RecetasService
+  ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

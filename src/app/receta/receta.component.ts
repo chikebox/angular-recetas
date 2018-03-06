@@ -12,7 +12,7 @@ export class RecetaComponent implements OnInit {
   show:boolean;
   constructor() {
     console.log('RecetaComponent constructor');
-    this.receta= new Receta('Bocata de calamares',
+    this.receta= new Receta(1,'Bocata de calamares',
     '/assets/imgs/receta_default.jpg',
     'soy un bocata de calamares',
     12,

@@ -9,7 +9,11 @@ import { Coche } from '../model/coche';
 export class ListadoComponent implements OnInit {
 
   @Input('stock') stock:Array<Coche>;
+  @Input('coche1') coche1:Coche;
+  @Input('coche2') coche2:Coche;
   @Output() eventoEmitir= new EventEmitter();
+  //criterio del buscador
+  searchText:string;
   constructor() { }
   ngOnInit() {
   }

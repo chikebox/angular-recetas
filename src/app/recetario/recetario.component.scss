@@ -1,0 +1,30 @@
+#busqueda{
+    text-align:center;
+    padding:10px;
+    input{
+        width:100%;
+        border-radius:50px;
+        height:2em;
+        font-size:2em;
+        text-align: center;
+    }
+}
+#menu{
+    text-align: center;
+        
+    li{
+            
+        list-style: none;
+        padding:5px;
+        width:100%;
+        border:1px #337AFF solid;
+        border-radius: 50px;
+        color:#337AFF;
+        font-size:1.2em;
+        text-align: center;
+        &:hover{
+            background-color:#337AFF;
+            color:white;
+        }
+    }
+}

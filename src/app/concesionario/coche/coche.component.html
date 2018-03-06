@@ -1,7 +1,7 @@
-<div class="thumbnail" >
-  <img src="/assets/imgs/coche_default.jpg" alt="coche">
+<div class="thumbnail" [class.active]="coche==coche1 || coche==coche2">
+  <img src="{{coche.foto}}" alt="coche">
     <div class="caption">
-      <h3>{{ coche.marca | uppercase }}</h3>
+      <p>{{ coche.marca | uppercase }}</p>
       <p>{{ coche.modelo }}</p>
     </div>
 </div>

@@ -1,10 +1,32 @@
 .thumbnail{
+    position:relative;
     &:hover{
         background-color:black;
         
-        h3,p{
-            color:white;
+        .caption{
+            display:inline-block;
         }
 
+    }
+    .caption{
+        position:absolute;
+        top: 0px;
+        left:0px;
+        bottom:0px;
+        right:0px;
+        display:none;
+        background-color:rgba(0, 0, 0, 0.5);
+        color:white;
+        padding:30px;
+        
+    }
+    
+}
+
+.active{
+    background-color:black;
+    
+    h3,p{
+        color:white;
     }
 }

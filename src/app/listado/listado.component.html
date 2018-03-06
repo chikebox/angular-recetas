@@ -1,6 +1,7 @@
-<div *ngFor="let cocheIteracion of stock">
+<input [(ngModel)]="searchText" placeholder="busca coche">
+<div *ngFor="let cocheIteracion of stock | filter : searchText">
     <!-- llamada al componente hijo -->
     <div class="col-xs-12">
-      <app-coche [cocheParametro]="cocheIteracion" (click)="seleccionar($event,cocheIteracion)"></app-coche>
+      <app-coche [cocheParametro]="cocheIteracion" [coche1]="coche1" [coche2]="coche2" (click)="seleccionar($event,cocheIteracion)"></app-coche>
     </div>
-  </div>
+</div>

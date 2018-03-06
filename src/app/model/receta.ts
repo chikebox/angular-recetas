@@ -1,5 +1,6 @@
 /* Clase para encapsular los atributos de una receta */
 export class Receta{
+    id:number;
     nombre : string;
     foto : string;
     descripcion : string; 
@@ -8,7 +9,8 @@ export class Receta{
     fotoGluten: string;
     isGlutenFree:boolean;
     ingredientes:string[];
-    constructor(pNombre:string, pFoto:string, pDescripcion:string, pLikes:number, pCocinero:string, pIsGlutenFree:boolean, pIngredientes:string[],){
+    constructor(pId:number,pNombre:string, pFoto:string, pDescripcion:string, pLikes:number, pCocinero:string, pIsGlutenFree:boolean, pIngredientes:string[],){
+        this.id=pId;
         this.nombre=pNombre;
         this.foto = pFoto;
         this.descripcion = pDescripcion;

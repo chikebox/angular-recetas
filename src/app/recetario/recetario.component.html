@@ -1,0 +1,30 @@
+<div id="busqueda">
+    <input [(ngModel)]="searchText" placeholder="buscar receta">
+</div>
+<div class="col-xs-12 col-sm-4">
+  <div class=" panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Lista de recetas</h3>
+    </div>
+    <div class="panel-body">
+      
+      <div *ngFor="let receta of menu | filter : searchText">
+        <div id="menu"class="col-xs-12">
+            <ul>
+              <li (click)="seleccionarReceta($event, receta)"><p>{{receta.nombre}}</p></li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-xs-12 col-sm-8">
+    <div class=" panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Detalle de la receta</h3>
+        </div>
+        <div class="panel-body">
+          <app-receta-detalle [receta]="recetaSeleccionada"></app-receta-detalle>
+        </div>
+      </div>
+</div>
