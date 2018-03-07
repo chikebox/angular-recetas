@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-xs-6" *ngIf="receta.nombre!=''">
+        <img src="{{receta.foto}}" alt="...">
+        <span id="gluten"><img *ngIf="receta.isGlutenFree"src='\assets\imgs\sinGluten.png' alt="No libre de Gluten"/></span>
+        <span id="gluten"><img *ngIf="!receta.isGlutenFree"src='\assets\imgs\conGluten.png' alt="Libre de Gluten"/></span>
+    </div>
+    <div class="col-xs-6" *ngIf="receta.nombre!=''">
+        <section class="ingredientes">
+            <h4><span class="badge">{{receta.ingredientes.length}}</span> Ingredientes</h4>
+            <ol>
+              <li *ngFor="let ingrediente of receta.ingredientes">
+                {{ingrediente}}
+              </li>
+            </ol>
+        </section>
+    </div>
+  </div>
+  
+  <div class="caption"*ngIf="receta.nombre!=''">
+<h3>{{ receta.nombre| uppercase }}      
+  <span class="cocinero">{{receta.cocinero}}</span>
+  <span class="label label-primary">Likes {{receta.likes}}</span> 
+  </h3>
+  
+    <p>{{receta.descripcion | slice:0:100}}...</p>
+
+  </div>

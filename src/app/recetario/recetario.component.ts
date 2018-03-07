@@ -13,6 +13,7 @@ export class RecetarioComponent implements OnInit {
   constructor(public recetasService:RecetasService) {
     this.menu= recetasService.getAll();
     this.recetaSeleccionada=new Receta(0,'','','',0,'',true,[]);
+    this.recetaSeleccionada=this.menu[0];
    }
 
   ngOnInit() {

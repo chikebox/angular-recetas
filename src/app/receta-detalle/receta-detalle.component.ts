@@ -8,7 +8,8 @@ import { Receta } from '../model/receta';
 })
 export class RecetaDetalleComponent implements OnInit {
   @Input('receta') receta:Receta;
-  constructor() { }
+  constructor() { 
+  }
   ngOnInit() {
   }
 }

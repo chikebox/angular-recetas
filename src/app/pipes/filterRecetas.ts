@@ -10,17 +10,30 @@ export class FilterReceta implements PipeTransform {
    * @param items :Coche[]
    * @param searchText :  string con la marca o modelo del coche 
    */
-  transform(items: Array<Receta>, searchText: string): Array<Receta> {
+  transform(items: Array<Receta>, searchText: string="", isGlutenFree:Boolean): Array<Receta> {
 
     if(!items) return [];
-    if(!searchText) return items;
     searchText = searchText.toLowerCase();
     let nombreReceta="";
-    return items.filter( recetaIt => {
-        nombreReceta=recetaIt.nombre;
-        nombreReceta = nombreReceta.toLowerCase();
-        return nombreReceta.includes(searchText);
+    let glutenReceta=false;
+    if (isGlutenFree){
+      items= items.filter( recetaIt => {
+          glutenReceta=recetaIt.isGlutenFree;
+      
+          return isGlutenFree===glutenReceta;
+          });
+
+    }
+    items= items.filter( recetaIt => {
+      nombreReceta=recetaIt.nombre +" "+recetaIt.cocinero;
+      recetaIt.ingredientes.forEach(ingrediente => {
+        nombreReceta=nombreReceta+" "+ingrediente;
+      });
+    nombreReceta = nombreReceta.toLowerCase();
+    return nombreReceta.includes(searchText);
     });
+    return items;
    }
+    
 
 }

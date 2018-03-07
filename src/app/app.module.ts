@@ -22,6 +22,7 @@ import { RecetarioComponent } from './recetario/recetario.component';
 import { RecetasService } from './providers/recetas.service';
 import { FilterReceta } from './pipes/filterRecetas';
 import { RecetaDetalleComponent } from './receta-detalle/receta-detalle.component';
+import { FilterGluten } from './pipes/glutenpipe';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { RecetaDetalleComponent } from './receta-detalle/receta-detalle.componen
     RoundPipe,
     FilterPipe,
     FilterReceta,
+    FilterGluten,
     RecetarioComponent,
     RecetaDetalleComponent
   ],

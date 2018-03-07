@@ -1,24 +1,29 @@
 #busqueda{
-    text-align:center;
+    text-align:left;
     padding:10px;
-    input{
-        width:100%;
+    #buscarTexto{
+        margin-right:10%;
         border-radius:50px;
-        height:2em;
-        font-size:2em;
         text-align: center;
+        width:400px;
+    }
+}
+#panel-menu{
+    margin-top:46px;
+    .panel-body{
+        padding:0px;
+        height:425px;
+        overflow:scroll;
     }
 }
 #menu{
-    text-align: center;
+    padding:0px;
+    text-align: left;
         
-    li{
-            
-        list-style: none;
-        padding:5px;
-        width:100%;
+    div{
+        position: relative;   
         border:1px #337AFF solid;
-        border-radius: 50px;
+        width:100%;
         color:#337AFF;
         font-size:1.2em;
         text-align: center;
@@ -27,4 +32,29 @@
             color:white;
         }
     }
+    .active{
+        background-color:#337AFF;
+        color:white;
+    }
 }
+#gluten{
+    position: absolute;
+    top:0px;
+    right:0px;
+    img{
+        width: 30px;
+        height: 30px;
+    }
+
+}
+#seleccionGluten{
+    input{
+        font-size:1.2em;
+        margin-top:15px;
+        margin-bottom:18px;
+    }
+}
+#nombreReceta{
+    font-weight: 900;
+}
+ 

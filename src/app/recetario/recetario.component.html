@@ -1,24 +1,29 @@
-<div id="busqueda">
-    <input [(ngModel)]="searchText" placeholder="buscar receta">
-</div>
-<div class="col-xs-12 col-sm-4">
+
+<div id="panel-menu" class="col-xs-12 col-sm-4">
+  
   <div class=" panel panel-primary">
     <div class="panel-heading">
       <h3 class="panel-title">Lista de recetas</h3>
     </div>
-    <div class="panel-body">
-      
-      <div *ngFor="let receta of menu | filter : searchText">
-        <div id="menu"class="col-xs-12">
-            <ul>
-              <li (click)="seleccionarReceta($event, receta)"><p>{{receta.nombre}}</p></li>
-            </ul>
+    <div  class="panel-body">
+        <div id="menu"class="col-xs-12"*ngFor="let receta of menu | filter : searchText : isGlutenFree">
+            <div (click)="seleccionarReceta($event, receta)" [class.active]="receta==recetaSeleccionada">
+                <span id="nombreReceta">{{receta.nombre}}</span><br>
+                <span>{{receta.cocinero}}</span>
+                <span id="gluten"><img *ngIf="receta.isGlutenFree"src='\assets\imgs\sinGluten.png' alt="No libre de Gluten"/></span>
+                <span id="gluten"><img *ngIf="!receta.isGlutenFree"src='\assets\imgs\conGluten.png' alt="Libre de Gluten"/></span>
+            </div>
         </div>
-      </div>
     </div>
   </div>
 </div>
+
 <div class="col-xs-12 col-sm-8">
+    <div id="busqueda">
+        <i class="fa fa-search" aria-hidden="true"></i>
+        <input id="buscarTexto" [(ngModel)]="searchText" placeholder="buscar receta por nombre, cocinero o ingrediente"> 
+        <input type="checkbox" name="receta" [(ngModel)]="isGlutenFree">Eliminar recetas con gluten
+    </div>
     <div class=" panel panel-primary">
         <div class="panel-heading">
           <h3 class="panel-title">Detalle de la receta</h3>
