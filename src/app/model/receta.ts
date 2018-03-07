@@ -9,8 +9,8 @@ export class Receta{
     fotoGluten: string;
     isGlutenFree:boolean;
     ingredientes:string[];
-    constructor(pId:number,pNombre:string, pFoto:string, pDescripcion:string, pLikes:number, pCocinero:string, pIsGlutenFree:boolean, pIngredientes:string[],){
-        this.id=pId;
+    constructor(pNombre:string="Receta por defecto", pFoto:string='', pDescripcion:string='', pLikes:number=0, pCocinero:string='Anonimo', pIsGlutenFree:boolean=false, pIngredientes:string[]=[],){
+        this.id=0;
         this.nombre=pNombre;
         this.foto = pFoto;
         this.descripcion = pDescripcion;

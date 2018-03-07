@@ -4,7 +4,7 @@ import { MOCKS_RECETAS } from './mocks-recetas';
 
 @Injectable()
 export class RecetasService {
-
+  recetas:Array<Receta>=new Array<Receta>();
   constructor() {
     console.log('CochesService Constructor')
    }
@@ -12,13 +12,12 @@ export class RecetasService {
    Conseguir todas las Recetas del Menu
    */
   getAll():Array<Receta>{
-    let recetas:Array<Receta>=new Array<Receta>();
+    
     let jsonData = JSON.parse(MOCKS_RECETAS.menu);
 
     jsonData.forEach( element => {
       
-        let receta = new Receta( 
-                          element.id, 
+        let receta = new Receta(  
                           element.nombre, 
                           element.foto,
                           element.descripcion,
@@ -28,11 +27,17 @@ export class RecetasService {
                           element.ingredientes
                           );
 
-        recetas.push(receta);
+        this.recetas.push(receta);
 
     });
 
-    return recetas;
+    return this.recetas;
   }
-
+  /**
+   * Crear Nueva Receta
+   * @param receta :Receta nueva
+   */
+ crear(receta:Receta):void{
+  this.recetas.unshift(receta);
+ }
 }

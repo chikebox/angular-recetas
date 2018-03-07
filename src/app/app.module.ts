@@ -15,15 +15,15 @@ import { ListadoComponent } from './listado/listado.component';
 import { CochesService } from './providers/coches.service';
 import { PipeResolver } from '@angular/compiler';
 import { RoundPipe } from './pipes/pipeRound';
-import { FormsModule } from '@angular/forms'
+import { FormsModule,ReactiveFormsModule } from '@angular/forms'
 import { FilterPipe } from './pipes/filterpipe';
 
 import { RecetarioComponent } from './recetario/recetario.component';
 import { RecetasService } from './providers/recetas.service';
-import { FilterReceta } from './pipes/filterRecetas';
 import { RecetaDetalleComponent } from './receta-detalle/receta-detalle.component';
 import { FilterGluten } from './pipes/glutenpipe';
 import { FormularioComponent } from './recetario/formulario/formulario.component';
+import { RecetasFilterPipe } from './pipes/filterRecetas';
 
 
 @NgModule({
@@ -39,7 +39,7 @@ import { FormularioComponent } from './recetario/formulario/formulario.component
     ListadoComponent,
     RoundPipe,
     FilterPipe,
-    FilterReceta,
+    RecetasFilterPipe,
     FilterGluten,
     RecetarioComponent,
     RecetaDetalleComponent,
@@ -48,7 +48,8 @@ import { FormularioComponent } from './recetario/formulario/formulario.component
   imports: [
     BrowserModule,
     AppRouter,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     CochesService,

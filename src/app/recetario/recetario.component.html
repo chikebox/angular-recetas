@@ -1,7 +1,7 @@
 
 <div id="panel-menu" class="col-xs-12 col-sm-4">
-  
-  <div class=" panel panel-primary">
+  <app-formulario></app-formulario>
+  <div id="lista" class=" panel panel-primary">
     <div class="panel-heading">
       <h3 class="panel-title">Lista de recetas</h3>
     </div>
@@ -23,7 +23,6 @@
         <i class="fa fa-search" aria-hidden="true"></i>
         <input id="buscarTexto" [(ngModel)]="searchText" placeholder="buscar receta"> 
         <input type="checkbox" name="receta" [(ngModel)]="isGlutenFree">Eliminar recetas con gluten
-        <app-formulario></app-formulario>
     </div>
     <div class=" panel panel-primary">
         <div class="panel-heading">

@@ -1,39 +1,49 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { Receta } from '../model/receta';
-
 @Pipe({
   name: 'filter'
 })
-export class FilterReceta implements PipeTransform {
+export class RecetasFilterPipe implements PipeTransform {
+
   /**
    * 
-   * @param items :Coche[]
-   * @param searchText :  string con la marca o modelo del coche 
+   * @param recetas Array de recetas
+   * @param searchText Texto de busqueda
    */
-  transform(items: Array<Receta>, searchText: string="", isGlutenFree:Boolean): Array<Receta> {
+  transform(recetas: Receta[], searchText: string, isGlutenFree: boolean): Receta[] {
 
-    if(!items) return [];
-    searchText = searchText.toLowerCase();
-    let nombreReceta="";
-    let glutenReceta=false;
-    if (isGlutenFree){
-      items= items.filter( recetaIt => {
-          glutenReceta=recetaIt.isGlutenFree;
-      
-          return isGlutenFree===glutenReceta;
-          });
+    //si no hay recetas retornar vacio
+    if (!recetas) return [];
 
-    }
-    items= items.filter( recetaIt => {
-      nombreReceta=recetaIt.nombre +" "+recetaIt.cocinero;
-      recetaIt.ingredientes.forEach(ingrediente => {
-        nombreReceta=nombreReceta+" "+ingrediente;
+    let recetasFilterArray: Receta[] = [];
+
+    //Filtramos si llevan gluten o no
+    if (isGlutenFree) {
+      recetas.forEach(it => {
+        if (it.isGlutenFree) {
+          recetasFilterArray.push(it);
+        }
       });
-    nombreReceta = nombreReceta.toLowerCase();
-    return nombreReceta.includes(searchText);
-    });
-    return items;
-   }
-    
+    } else {
+      recetasFilterArray = recetas;
+    }
 
+    //De los que quedan filtramos por texto si hay
+    if (!searchText) {
+      return recetasFilterArray;
+    } else {
+      searchText = searchText.toLowerCase();
+      let receta = '';
+      return recetasFilterArray.filter(it => {
+
+
+        receta = it.nombre + it.ingredientes + it.cocinero;
+        receta = receta.toLowerCase();
+
+        return receta.includes(searchText);
+      });
+    }
+
+
+  }
 }
