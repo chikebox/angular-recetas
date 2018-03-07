@@ -23,6 +23,7 @@ import { RecetasService } from './providers/recetas.service';
 import { FilterReceta } from './pipes/filterRecetas';
 import { RecetaDetalleComponent } from './receta-detalle/receta-detalle.component';
 import { FilterGluten } from './pipes/glutenpipe';
+import { FormularioComponent } from './recetario/formulario/formulario.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { FilterGluten } from './pipes/glutenpipe';
     FilterReceta,
     FilterGluten,
     RecetarioComponent,
-    RecetaDetalleComponent
+    RecetaDetalleComponent,
+    FormularioComponent
   ],
   imports: [
     BrowserModule,
