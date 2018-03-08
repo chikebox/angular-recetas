@@ -1,72 +1,104 @@
 export class MOCKS_COCHES {
 
     static stock = `[{
-		"id": 1,
-		"nombre": "Rabo de toro",
-		"foto": "http://www.eladerezo.com/wp-content/uploads/2010/06/rabo-de-toro-guisado-1-1200x801.jpg",
-		"descripcion": "El rabo de toro es un guiso típico cordobés consistente en estofado de rabo de vaca o toro. Se trata de un ragú que se cocina frecuentemente en diversas cocinas andaluzas.​",
-		"likes": 12,
-		"cocinero": "Paquirrín",
-		"isGlutenFree": false,
-		"ingredientes": [
-			"Rabo de toro",
-			"Cebolla",
-			"Zanahoria",
-			"Pimiento rojo",
-			"Ajo",
-			"Tomate",
-			"Puerro",
-			"Laurel",
-			"Tomillo",
-			"Vino tinto",
-			"Sal",
-			"Aceite de Oliva",
-			"Harina"
-		]
+		"id": 12,
+		"marca": "Seat",
+		"modelo": "Panda",
+		"version": "1.0",
+		"foto": "https://www.minicar.es/large/Fiat-Panda-%281980%29-RBA-Entrega-29-1%3A43-i33233.jpg",
+		"puertas": 3,
+		"caballos": 100,
+		"consumo": 5
 	},
-
 	{
-		"id": 2,
-		"nombre": "Marmitako",
-		"foto": "https://t1.rg.ltmcdn.com/es/images/9/8/4/img_marmitako_vasco_10489_600.jpg",
-		"descripcion": "La marmita de bonito es un plato basado en Thunnus alalunga, cuyo origen se encuentra en los pescadores asturianos, cántabros y vascos. Se trata de un guiso de bonito con patatas, cebolla, pimiento y tomate, principalmente.",
-		"likes": 24,
-		"cocinero": "Iñaki RecogeSetas",
-		"isGlutenFree": true,
-		"ingredientes": [
-			"Bonito",
-			"Patata",
-			"Cebolla",
-			"Pimiento verde",
-			"Ajo",
-			"Tomate",
-			"Caldo de pescado",
-			"Aceite de Oliva"
-		]
+		"id": 13,
+		"marca": "Seat",
+		"modelo": "Ibiza",
+		"version": "1.0",
+		"foto": "https://a.ccdn.es/nuevos/400/seat/ibiza/2017/5ha.jpg",
+		"puertas": 5,
+		"caballos": 95,
+		"consumo": 3
 	},
-
 	{
-		"id": 3,
-		"nombre": "Falafel",
-		"foto": "https://fthmb.tqn.com/rjPu2fIjF0rj2LNx162e2Mjv2do=/960x0/filters:no_upscale()/10163940-56a617ef3df78cf7728b4d22.jpg",
-		"descripcion": "El faláfel o falafel es una croqueta de garbanzos o haba y se originó en algún lugar del subcontinente indio.",
-		"likes": 32,
-		"cocinero": "El del Kebap",
-		"isGlutenFree": true,
-		"ingredientes": [
-			"Garbanzos",
-			"Perejil",
-			"Cebolla",
-			"Cilandro",
-			"Ajo",
-			"Comino molido",
-			"Pan rallado",
-			"Bicarbonato",
-			"Sal",
-			"Pimienta negra",
-			"Cayena molida",
-			"Aceite de Oliva"
-		]
+		"id": 14,
+		"marca": "Citroen",
+		"modelo": "Saxo",
+		"version": "2.6",
+		"foto": "https://www.automanijak.com/resources/images/variant/381/saxo_2.jpg",
+		"puertas": 5,
+		"caballos": 68,
+		"consumo": 2.7
+	},
+	{
+		"id": 15,
+		"marca": "Bat-movil",
+		"modelo": "Del Caballero Oscuro",
+		"version": "999.999.999",
+		"foto": "http://static.alfabetajuega.com/abj_public_files/multimedia/imagenes/201508/118896.batman-tumbler.jpg",
+		"puertas": 7,
+		"caballos": 230,
+		"consumo": 5.0
+	},
+	{
+		"id": 555,
+		"marca": "Citroen",
+		"modelo": "Palace",
+		"version": "7.0",
+		"foto": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Citroen_GS_Pallas_1977.jpg",
+		"puertas": 5,
+		"caballos": 340,
+		"consumo": 28
+	},
+	{
+		"id": 20,
+		"marca": "Seat",
+		"modelo": "Leon",
+		"version": "1.2 TSI",
+		"foto": "https://www.coches.com/fotos_historicas/seat/Leon/high_6aad986865df7a9bb8fc5f05398fd423.jpg",
+		"puertas": 5,
+		"caballos": 110,
+		"consumo": 6.1
+	},
+	{
+		"id": 22,
+		"marca": "Renault",
+		"modelo": "Clio",
+		"version": "2.0",
+		"foto": "https://www.renault.es/gama-renault/renault-vehiculos-turismos/gama-clio/clio/boites-fermees/att1441077990b5451eab7bfd355bebef5d/renault-clio-fase2-galeria08_ok.jpg",
+		"puertas": 3,
+		"caballos": 120,
+		"consumo": 7
+	},
+	{
+		"id": 35,
+		"marca": "Bugatti",
+		"modelo": "Chiron",
+		"version": "Cupé",
+		"foto": "https://www.diariomotor.com/imagenes/picscache/1920x1600c/bugatti-chiron-2016-mas-p2_1920x1600c.jpg",
+		"puertas": 3,
+		"caballos": 1500,
+		"consumo": 190
+	},
+	{
+		"id": 38,
+		"marca": "Golf",
+		"modelo": "Gti",
+		"version": " 2.0 TSI",
+		"foto": "https://acs2.blob.core.windows.net/imgcatalogo/xl/VA_6acc7aa9e5274a5391a0c5dfa735d481.jpg",
+		"puertas": 5,
+		"caballos": 230,
+		"consumo": 6.30
+	},
+	{
+		"id": 46,
+		"marca": "Porsche",
+		"modelo": "911",
+		"version": "Carrera CS",
+		"foto": "https://www.classicdriver.com/sites/default/files/styles/full_width_slider/public/article_images/porsche_911_carrera_cs_1_0.jpg?itok=MBC3llfG",
+		"puertas": 3,
+		"caballos": 540,
+		"consumo": 11.8
 	}
 ]`;
 

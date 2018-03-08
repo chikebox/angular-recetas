@@ -24,6 +24,7 @@ import { RecetaDetalleComponent } from './receta-detalle/receta-detalle.componen
 import { FilterGluten } from './pipes/glutenpipe';
 import { FormularioComponent } from './recetario/formulario/formulario.component';
 import { RecetasFilterPipe } from './pipes/filterRecetas';
+import { FormularioCocheComponent } from './concesionario/formulario/formulario.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { RecetasFilterPipe } from './pipes/filterRecetas';
     FilterGluten,
     RecetarioComponent,
     RecetaDetalleComponent,
-    FormularioComponent
+    FormularioComponent,
+    FormularioCocheComponent
   ],
   imports: [
     BrowserModule,

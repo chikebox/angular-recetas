@@ -20,33 +20,45 @@
         <p>Estado: {{ formulario.status | json }}</p>
         <form [formGroup]="formulario" (ngSubmit)="sumitar($event)" novalidate>
           <div class="col-md-6">
-            <div class="form-group form-inline">
-              <label for="nombre">*Nombre:</label>
-              <input formControlName="nombre" placeholder="Nombre">
+            <div [ngClass]="estilosInput(formulario.controls.nombre)" class="form-group form-inline">
+              <label class="control-label" for="nombre">*Nombre:</label>
+              <input class="form-control" formControlName="nombre" placeholder="Nombre">
               <p *ngIf="formulario.controls.nombre.invalid && formulario.controls.nombre.touched" class="text-danger">*Obligatorio, mínimo 2 letras</p>
             </div>
-            <div class="form-group form-inline">
-              <label for="cocinero">Cocinero:</label>
-              <input formControlName="cocinero" placeholder="Cocinero">
-              <p *ngIf="formulario.controls.nombre.invalid && formulario.controls.nombre.touched" class="text-danger">*Obligatorio, mínimo 2 letras</p>
+            <div [ngClass]="estilosInput(formulario.controls.cocinero)" class="form-group form-inline">
+              <label class="control-label" for="cocinero">Cocinero:</label>
+              <input formControlName="cocinero" class="form-control" placeholder="Cocinero">
+              <p *ngIf="formulario.controls.cocinero.invalid && formulario.controls.cocinero.touched" class="text-danger">*Obligatorio, mínimo 2 letras</p>
             </div>
             <div class="form-group form-inline">
               <label for="gluten">Gluten:</label>
-              <input id="radio" type="radio"  formControlName="gluten" [checked]="true" name="gluten" value="false"> Si
+              <input id="radio" type="radio"  formControlName="gluten"  name="gluten" value="false"> Si
               <input id="radio" type="radio" formControlName="gluten" name="gluten" value="true"> No
             </div>
+            <div class="form-group">
+              <label for="">Ingredientes </label>
+              <a (click)="clickOtroIngrediente()">Añadir Ingrediente</a>
+              <div formArrayName="ingredientes"
+                *ngFor="let ingrediente of formulario.get('ingredientes').controls; let i = index;">                    
+                <div [formGroupName]="i">
+                    <input formControlName="nombre" placeholder="Nuevo Ingrediente" class="ingrediente-input">                        
+                    <span class="glyphicon glyphicon-remove-circle" (click)="clickEliminarIngrediente(i)"></span>
+                </div>                   
+              </div>
+            </div>
           </div>
-          <div class="col-md-6">
-            <img id="imagenFormulario" [src]='(formulario.controls.foto.value=="") ? "https://comerbeber.com/archivos/imagen/libordecocina.jpg" : formulario.controls.foto.value' alt="">
-            <input type="text"formControlName="foto" placeholder="foto de la receta">
+          <div class="col-md-6" [ngClass]="estilosInput(formulario.controls.foto)">
+            <img id="imagenFormulario" [src]='formulario.controls.foto.value' alt="">
+            <input class="form-control" type="text"formControlName="foto" placeholder="foto de la receta">
             <p *ngIf="formulario.controls.foto.invalid && formulario.controls.foto.touched" class="text-danger">*Obligatorio</p>
           </div>
-          <div class="col-md-12">
-            <label for="descripcion">*Descripcion:</label>
+          
+          <div class="col-md-12" [ngClass]="estilosInput(formulario.controls.descripcion)">
+            <label class="control-label" for="descripcion">*Descripcion:</label>
             <p *ngIf="formulario.controls.descripcion.invalid && formulario.controls.descripcion.touched" class="text-danger">*Obligatorio, mínimo 100 caracteres</p>
           </div>
             <br>
-            <textarea name="descripcion" formControlName="descripcion" cols="77" rows="10"></textarea>
+            <textarea name="descripcion" class="form-control" formControlName="descripcion"></textarea>
           
           <input [disabled]="!formulario.valid" class="btn btn-success btn-block" type="submit" value="Crear">
 

@@ -4,15 +4,15 @@ import { MOCKS_COCHES } from './mocks-coches';
 
 @Injectable()
 export class CochesService {
-
+  coches:Array<Coche>
   constructor() {
+    this.coches=new Array<Coche>();
     console.log('CochesService Constructor')
    }
    /*
    Conseguir todos los coches del concesionario
    */
   getAll():Array<Coche>{
-    let coches:Array<Coche>=new Array<Coche>();
     let jsonData = JSON.parse(MOCKS_COCHES.stock);
 
     jsonData.forEach( element => {
@@ -29,11 +29,13 @@ export class CochesService {
                           element.consumo
                           );
 
-        coches.push(coche);
+        this.coches.push(coche);
 
     });
 
-    return coches;
+    return this.coches;
   }
-
+  crear(coche:Coche):void{
+    this.coches.unshift(coche);
+   }
 }
