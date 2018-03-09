@@ -1,0 +1,29 @@
+#todos{
+    background-image: url("/assets/imgs/niña.jpg");
+
+    min-height:100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display:flex;
+    section{
+        background-color:rgba(255, 255, 255, 0.5);
+        margin:auto;
+        width:30vh;
+    }
+    h2{
+        text-align: center;
+        margin-bottom:30px;
+    }
+    ul{
+        list-style: none;
+    }
+    input[type="checkbox"]{
+        height:1.5em;
+        width:1.5em;
+        margin-right:10px;
+    }
+    .tachada{
+        text-decoration: line-through;
+    }
+}
