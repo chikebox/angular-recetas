@@ -2,9 +2,9 @@
     <section>
         <h2>Lista de tareas</h2>
         <input type="text" placeholder="Añadir tarea nueva" [(ngModel)]="nuevaTarea">
-        <i (click)="anadirNueva()" class="fa fa-2 fa-plus-circle" aria-hidden="true"></i>
+        <i (click)="new()" class="fa fa-2 fa-plus-circle" aria-hidden="true"></i>
         <ul>
-            <li [ngClass]="(todo.completed)?'tachada':'no-tachada'" *ngFor="let todo of todos"><input type="checkbox"(click)="cambiarCompleto(todo)" [checked]="todo.completed"> {{todo.title}} <i class="fa fa-trash-o" aria-hidden="true" (click)="eliminar(todo.id)"></i></li>
+            <li [ngClass]="(todo.completed)?'tachada':'no-tachada'" *ngFor="let todo of todos"><input type="checkbox"(click)="cambiarCompleto(todo)" [checked]="todo.completed"> {{todo.title}} <i class="fa fa-trash-o" aria-hidden="true" (click)="delete(todo)"></i></li>
         </ul>
     </section>  
   

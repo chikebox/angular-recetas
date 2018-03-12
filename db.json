@@ -13,20 +13,7 @@
       "postId": 1
     }
   ],
-  "todos": [
-    {
-      "id": 1,
-      "userId": 2,
-      "title": "Leer mas sobre Angular",
-      "completed": true
-    },
-    {
-      "id": 2,
-      "userId": 2,
-      "title": "Aprender Angular",
-      "completed": true
-    }
-  ],
+  "todos": [],
   "profile": {
     "name": "typicode"
   }

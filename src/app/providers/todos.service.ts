@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
+import { Todo } from '../model/todo';
 
-const END_POINT="http://localhost:3000/todos";
+const END_POINT="http://localhost:3000/todos/";
 @Injectable()
 export class TodosService {
 
@@ -14,4 +15,30 @@ export class TodosService {
      console.log('TodosService getTodos ${url}');
      return this.http.get(url);
    }
+   delete(id):Observable<any>{
+    let url = END_POINT+id;
+    console.log(`TodosService delete ${url}`);
+    return this.http.delete(url);
+  }
+
+  post(todo:Todo):Observable<any>{
+    let url = END_POINT;
+    console.log(`TodosService put ${url}`);
+
+    let body = {
+                  // "id": todo.id,
+                  "userId": todo.idUser,
+                  "title": todo.title,
+                  "completed": todo.completed    
+                } 
+              
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json'
+      })
+    };
+
+    return this.http.post( url, body , httpOptions );
+  }
+
 }
