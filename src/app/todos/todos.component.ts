@@ -60,7 +60,18 @@ export class TodosComponent implements OnInit {
 
   }
   cambiarCompleto(todo:Todo){
-    todo.completed=!todo.completed;
+    console.log('TodosComponent cambiarCompleted ');
+    
+    this.todosService.cambiarCompleted(todo).subscribe(
+      result=>{
+        console.log('TodosComponent cambiarCompleted %o', result);
+        this.cargarTareas();
+      },
+      error=>{
+        alert('No se pudo cambiarCompleted');
+        console.error(error);
+      }
+    );
   }
   delete(todo:Todo){
     console.log('TodosComponent delete %o', todo );
@@ -97,4 +108,6 @@ export class TodosComponent implements OnInit {
       }
     );
   }
+  
+    
 }

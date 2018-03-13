@@ -2,8 +2,9 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { Todo } from '../model/todo';
+import { Global } from '../global';
 
-const END_POINT="http://localhost:3000/todos/";
+
 @Injectable()
 export class TodosService {
 
@@ -11,18 +12,18 @@ export class TodosService {
     console.log('TodosService constructor');
    }
    getTodos():Observable<any>{
-     let url=END_POINT
+     let url=Global.endpoint+"/todos"
      console.log('TodosService getTodos ${url}');
      return this.http.get(url);
    }
    delete(id):Observable<any>{
-    let url = END_POINT+id;
+    let url = Global.endpoint+"/todos/"+id;
     console.log(`TodosService delete ${url}`);
     return this.http.delete(url);
   }
 
   post(todo:Todo):Observable<any>{
-    let url = END_POINT;
+    let url = Global.endpoint+"/todos";
     console.log(`TodosService put ${url}`);
 
     let body = {
@@ -39,6 +40,22 @@ export class TodosService {
     };
 
     return this.http.post( url, body , httpOptions );
+  }
+  cambiarCompleted(todo:Todo):Observable<any>{
+    let url = Global.endpoint+"/todos/"+todo.id;
+    console.log(`TodosService put ${url}`);
+
+    let body = {
+                  "completed": !todo.completed    
+                } 
+              
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json'
+      })
+    };
+
+    return this.http.patch( url, body , httpOptions );
   }
 
 }

@@ -17,7 +17,7 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms'
 import { FilterPipe } from './pipes/filterpipe';
 
 // Importar HttpClientModule
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule,HttpClient,HttpHandler} from '@angular/common/http';
 
 import { RecetarioComponent } from './recetario/recetario.component';
 import { RecetasService } from './providers/recetas.service';
@@ -60,7 +60,8 @@ import { TodosService } from './providers/todos.service';
     HttpClientModule,
     AppRouter,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    
     
   ],
   providers: [
