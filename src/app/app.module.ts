@@ -29,6 +29,7 @@ import { FormularioCocheComponent } from './concesionario/formulario/formulario.
 import { PlantillaComponent } from './plantilla/plantilla.component';
 import { TodosComponent } from './todos/todos.component';
 import { TodosService } from './providers/todos.service';
+import { FormularioBasicoComponent } from './formulario-basico/formulario-basico.component';
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import { TodosService } from './providers/todos.service';
     FormularioComponent,
     FormularioCocheComponent,
     PlantillaComponent,
-    TodosComponent
+    TodosComponent,
+    FormularioBasicoComponent
   ],
   imports: [
     BrowserModule,

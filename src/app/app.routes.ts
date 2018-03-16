@@ -9,6 +9,7 @@ import { ConcesionarioComponent } from './concesionario/concesionario.component'
 import { RecetarioComponent } from './recetario/recetario.component';
 import { PlantillaComponent } from './plantilla/plantilla.component';
 import { TodosComponent } from './todos/todos.component';
+import { FormularioBasicoComponent } from './formulario-basico/formulario-basico.component';
 const appRoutes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'receta', component: RecetaComponent },
@@ -18,6 +19,7 @@ const appRoutes: Routes = [
     { path: 'recetaBusqueda', component:RecetarioComponent    },
     { path: 'plantilla', component:PlantillaComponent    },
     { path: 'todos', component:TodosComponent    },
+    { path: 'formulario-basico', component:FormularioBasicoComponent    },
     { path: '**', component: Page404Component  }
     
   ];

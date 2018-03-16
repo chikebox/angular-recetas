@@ -1,0 +1,11 @@
+<p>Valores: {{ formulario.value | json}}</p>
+<p>Estado: {{ formulario.status | json}}</p>
+<form [formGroup]="formulario" novalidate (ngSubmit)="enviar($event)">
+    <input formControlName="nombre" class="form-control" placeholder="Nombre">
+    <p *ngIf="formulario.controls.nombre.invalid && formulario.controls.nombre.touched" class="text-danger">*Obligatorio, mínimo 2 letras</p>
+  <input type="submit" class="btn" value="Enviar" [disabled]="formulario.invalid">
+</form>
+<h2>Doble binding o Banana in a box</h2>
+
+{{ banana }}
+<input [(ngModel)]="banana" type="text">
